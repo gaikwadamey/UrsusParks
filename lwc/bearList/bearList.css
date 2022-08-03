@@ -1,0 +1,11 @@
+.bear-tile {
+    border : 1px solid #F0FFFF;
+    border-radius: .25rem;
+    display: block;
+    padding: 10px;
+}
+
+.bear-silhouette
+{
+    height: 100px;
+}

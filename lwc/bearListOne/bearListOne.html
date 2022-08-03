@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Bears" icon-name="utility:animal_and_nature">
+        <div class="slds-card__body_inner">
+            <template if:true={bears.data}>
+            <lightning-input type="search"
+            onchange={handleSearchTermChange}
+            variant="label-hidden"
+            class="slds-var-m-bottom_small"
+            label="Search"
+            placeholder="Search for Bears"	
+            value={searchTerm}>
+        </lightning-input>
+    
+    
+            <lightning-layout multiple-rows="true" pull-to-boundary="small">
+    
+    <template for:each={bears.data} for:item="bear">
+        <lightning-layout-item key = {bear.Id} size="3" class="slds-var-p-around_x-small">
+            <lightning-card title={bear.Name} class="bear-tile">
+                <div class="slds-var-p-horizontal_small bear-tile-body">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <img src={appresources.bearSilhouette} alt="Bear Profile" class="bear-silhouette"/>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-var-m-bottom_xx-small">{bear.Sex__c}</p>
+                            <p class="slds-var-m-bottom_xx-small">{bear.Age__c} year old</p>
+                            <p class="slds-var-m-bottom_xx-small">{bear.Height__c} cm</p>
+                            <p class="slds-var-m-bottom_xx-small">{bear.Weight__c} kg</p>
+                        </div>
+                    </div>
+                </div>
+            </lightning-card>
+        </lightning-layout-item>
+    </template>
+        </lightning-layout>
+        </template>
+        </div>
+    </lightning-card>
+    </template>
